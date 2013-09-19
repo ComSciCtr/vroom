@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>sphere</title>
+<link href="/vroom/assets/css/vendor/bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/vroom/assets/css/vendor/bootstrap/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/vroom/assets/css/site.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/vroom/assets/js/holder.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<header>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<a class='brand' href='/vroom/'>
+<i class='icon-home'></i>
+</a>
+<ul class='nav'>
+<li><a href="/vroom/download.html">download</a></li>
+<li><a href="/vroom/documentation/">documentation</a></li>
+<li><a href="/about.html">about</a></li>
+<li><a href="/demos.html">demos</a></li>
+</ul>
+</div>
+</div>
+
+</header>
+<div id='main'>
+<div class='row-fluid'>
+<div class='span12'>
+<div class='hero-unit'>
+<h1>sphere</h1>
+<h3>
+<a data-placement='right' data-toggle='tooltip' href='https://github.com/jvan/vroom/blob/master/vroom/rendering/sphere.py' title='view source on github'>
+<i class='icon-github'></i>
+rendering/sphere.py
+</a>
+</h3>
+<div class='taglist'>
+<h4 class='inline label label-info'>tags:</h4>
+<ul class='inline'>
+<li>
+<a href="/vroom/documentation/tags/rendering.html">rendering</a>
+</li>
+<li>
+<a href="/vroom/documentation/tags/geometry.html">geometry</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class='row-fluid'>
+<div class='span8 offset2'>
+<p>Draw a sphere.</p>
+
+<p>This function draws a sphere with its center at the origin (0,0,0).</p>
+
+<h3 id="syntax">syntax</h3>
+
+<pre class="highlight python"><span class="n">sphere</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+</pre>
+<h3 id="parameters">parameters</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>radius</td>
+      <td>radius of sphere</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="optional-arguments">optional arguments</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>style</td>
+      <td>rendering style: "wireframe" (default) or "solid"</td>
+    </tr>
+    <tr>
+      <td>texture</td>
+      <td><a href="#">Texture</a> object(s)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples">examples</h3>
+
+<h4 id="draw-a-wireframe-sphere">draw a wireframe sphere</h4>
+
+<p><img width="400" height="225" src="/vroom/assets/img/examples/rendering/sphere/draw-a-wireframe-sphere.png" /></p>
+
+<pre class="highlight python"><span class="k">def</span> <span class="nf">display</span><span class="p">():</span>
+   <span class="n">lighting</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+   <span class="n">color</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+   <span class="n">sphere</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+</pre>
+<h4 id="draw-a-solid-sphere">draw a solid sphere</h4>
+
+<p><img width="400" height="225" src="/vroom/assets/img/examples/rendering/sphere/draw-a-solid-sphere.png" /></p>
+
+<pre class="highlight python"><span class="k">def</span> <span class="nf">display</span><span class="p">():</span>
+   <span class="n">lighting</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+   <span class="n">material</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+   <span class="n">sphere</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'solid'</span><span class="p">)</span>
+</pre>
+<h4 id="draw-a-texture-mapped-sphere">draw a texture-mapped sphere</h4>
+
+<p><img width="400" height="225" src="/vroom/assets/img/examples/rendering/sphere/draw-a-texture-mapped-sphere.png" /></p>
+
+<pre class="highlight python"><span class="k">def</span> <span class="nf">gl_init</span><span class="p">():</span>
+   <span class="n">Global</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s">'data/globe.png'</span><span class="p">)</span>   
+
+<span class="k">def</span> <span class="nf">display</span><span class="p">():</span>
+   <span class="n">lighting</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+   <span class="n">material</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+   <span class="n">sphere</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">Global</span><span class="o">.</span><span class="n">texture</span><span class="p">)</span>
+</pre>
+<h4 class='inline label label-info' id='related'>see also:</h4>
+<ul class='inline'>
+<li><a href="/vroom/documentation/rendering/sphere-detail.html">sphereDetail</a></li>
+<li><a href="/vroom/documentation/rendering/cube.html">cube</a></li>
+</ul>
+
+</div>
+</div>
+
+<div class='push'></div>
+</div>
+<footer>
+<div class='row'>
+<div class='span4 offset1'>
+<ul class='unstyled'>
+<li>
+<i class='icon-envelope'></i>
+<a href="mailto:jvan@cse.ucdavis.edu">email</a>
+</li>
+<li>
+<i class='icon-github-alt'></i>
+<a href="https://github.com/jvan/vroom">github project</a>
+</li>
+<li>
+<i class='icon-bug'></i>
+<a href="http://iviz.csc.ucdavis.edu/redmine/projects/vroom">issues</a>
+</li>
+</ul>
+<p>this site was built using <a href="http://middlemanapp.com">middleman</a> and
+<a href="http://twitter.github.io/bootstrap/">bootstrap</a></p>
+</div>
+</div>
+
+</footer>
+<script src="/vroom/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/vroom/assets/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<script>
+  // Enable tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  // Add markup to overview paragraph
+  $('p:first').addClass('lead')
+  
+  // Add markup to table elements
+  $('table').addClass('table table-bordered');
+  $('tr td:first-child').addClass('alert alert-info');
+  
+  // Add empty list element for to store tab toggle links
+  $('h3:last').after('<ul class="nav nav-pills nav-stacked" id="nav-tab"/>');
+  
+  $('h3:last ~ h4').not('#related').each(function() {
+    var tab_id = $(this).attr("id");
+  
+    // add a link to toggle the section content
+    $('#nav-tab').append('<li><a href="#'+tab_id+'" data-toggle="tab">'+$(this).text()+'</a></li>');
+  
+    // wrap the section content in a div
+    $(this).nextUntil('h4')
+           .andSelf()
+           .wrapAll('<div class="tab-pane fade media" id="'+tab_id+'" />');
+  });
+  
+  // Make the first tab toggle active
+  $('#nav-tab li:first').addClass('active');
+  
+  $('.tab-pane').each(function() {
+    // Image elements come wrapped in p-elements; replace with media markup
+    $(this).find('img').unwrap().wrap('<a class="pull-right"/>').addClass('media-object');
+  
+    // Wrap code block in media-body div
+    $(this).find('pre').wrap('<div class="media-body"/>');
+  
+    // Remove the header element (text already added to list above)
+    $(this).find('h4').remove();
+  
+  }).first().addClass('in active'); // activate the first content section
+  
+  // Wrap all content sections in div
+  $('.tab-pane').wrapAll('<div class="tab-content"/>');
+</script>
+
+</body>
+</html>
+
+

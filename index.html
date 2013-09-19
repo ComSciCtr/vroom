@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title></title>
+<link href="/vroom/assets/css/vendor/bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/vroom/assets/css/vendor/bootstrap/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/vroom/assets/css/site.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/vroom/assets/js/holder.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<header>
+<div class='navbar navbar-fixed-top'>
+<div class='navbar-inner'>
+<a class='brand' href='/vroom/'>
+<i class='icon-home'></i>
+</a>
+<ul class='nav'>
+<li><a href="/vroom/download.html">download</a></li>
+<li><a href="/vroom/documentation/">documentation</a></li>
+<li><a href="/about.html">about</a></li>
+<li><a href="/demos.html">demos</a></li>
+</ul>
+</div>
+</div>
+
+</header>
+<div id='main'>
+<div class='row-fluid'>
+<div class='span12'>
+<div class='hero-unit' id='frontpage-hero'>
+<h1>vroom</h1>
+<h2>rapid visualization environment</h2>
+<p>
+<a class='btn btn-large btn-info' href='download.html'>get started</a>
+</p>
+<ul class='inline'>
+<li><a href="#">tutorials</a></li>
+<li><a href="/vroom/documentation/">api reference</a></li>
+<li><a href="#">source code</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class='row-fluid' id='brief'>
+<div class='span6 offset3'>
+<p><strong>vroom</strong> is designed to make immersive 3D visualization easier by
+reducing the amount of time (and effort) required to develop VR
+applications. It is primarily intended as a visualization tool for
+scientists and researchers, but hopefully it is useful to anyone
+interested in creating and interacting in 3D.</p>
+
+<p>It is being developed at the <em>University of California, Davis</em>.</p>
+</div>
+</div>
+<div class='row-fluid'>
+<div class='span3 offset2'>
+<h3>simple syntax</h3>
+<p><strong>vroom</strong> provides a clean, simple interface that is easy to learn, but
+also very flexible, allowing you to start off small and scale your
+application as needed. <strong>vroom's</strong> minimalist approach means that you won't
+waste time and energy. Want to quickly visualize some data? Write a
+simple app that does just that. No need to deploy a massive framework
+for simple tasks.</p>
+</div>
+<div class='span3'>
+<h3>live coding</h3>
+<p>Sometimes you don't know what direction a project is going to go when
+you start out. This is very common in scientific fields where the data
+being analyzed or the method of analysis is unique. <strong>vroom's</strong> live-coding
+environment provides instant feedback allowing you to experiment as
+you are building your application. It is also just a very nice way to
+interact with your code.</p>
+</div>
+<div class='span3'>
+<h3>high level</h3>
+<p>Sometimes you have data that you just want to look at without spending
+a whole afternoon writing code. <strong>vroom's</strong> high-level approach to 
+visualization lets you get a lot done in a short amount of time.
+This means you get to spend more time interacting with your data and 
+less time trying to get it to the screen.</p>
+</div>
+</div>
+<div id='examples'>
+<div class='row-fluid example active'>
+<div class='span10 offset1'>
+<div class='media'>
+<a class='pull-right'>
+<img class='media-object' src='holder.js/600x400/social'>
+</a>
+<div class='media-body'>
+<h4 class='media-heading'>user-interaction</h4>
+<pre class="highlight python"><span class="kn">from</span> <span class="nn">vroom</span> <span class="kn">import</span> <span class="o">*</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>&#x000A;  <span class="n">Global</span><span class="o">.</span><span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">display</span><span class="p">():</span>&#x000A;  <span class="n">lighting</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>&#x000A;  <span class="n">color</span><span class="p">(</span><span class="n">green</span><span class="p">)</span>&#x000A;  <span class="n">draw</span><span class="p">(</span><span class="n">sphere</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span><span class="o">.</span><span class="n">for_each</span><span class="p">(</span><span class="n">Global</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">buton_press</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>&#x000A;  <span class="n">Global</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class='row-fluid example hide'>
+<div class='span10 offset1'>
+<div class='media'>
+<a class='pull-right'>
+<img class='media-object' src='holder.js/600x400/social'>
+</a>
+<div class='media-body'>
+<h4 class='media-heading'>texture-mapping</h4>
+<pre class="highlight python"><span class="kn">from</span> <span class="nn">vroom</span> <span class="kn">import</span> <span class="o">*</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>&#x000A;  <span class="n">Global</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">Texture</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s">'crate.png'</span><span class="p">)</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">display</span><span class="p">():</span>&#x000A;  <span class="n">material</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>&#x000A;  <span class="n">cube</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">Global</span><span class="o">.</span><span class="n">texture</span><span class="p">)</span></pre>
+</div>
+</div>
+</div>
+</div>
+<div class='row-fluid example hide'>
+<div class='span10 offset1'>
+<div class='media'>
+<a class='pull-right'>
+<img class='media-object' src='holder.js/600x400/social'>
+</a>
+<div class='media-body'>
+<h4 class='media-heading'>animation</h4>
+<pre class="highlight python"><span class="kn">from</span> <span class="nn">vroom</span> <span class="kn">import</span> <span class="o">*</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>&#x000A;  <span class="n">Global</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">1.0</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">frame</span><span class="p">():</span>&#x000A;  <span class="n">Global</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">fabs</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">elapsedTime</span><span class="p">()))</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">display</span><span class="p">():</span>&#x000A;  <span class="n">sphere</span><span class="p">(</span><span class="n">Global</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class='push'></div>
+</div>
+<footer>
+<div class='row'>
+<div class='span4 offset1'>
+<ul class='unstyled'>
+<li>
+<i class='icon-envelope'></i>
+<a href="mailto:jvan@cse.ucdavis.edu">email</a>
+</li>
+<li>
+<i class='icon-github-alt'></i>
+<a href="https://github.com/jvan/vroom">github project</a>
+</li>
+<li>
+<i class='icon-bug'></i>
+<a href="http://iviz.csc.ucdavis.edu/redmine/projects/vroom">issues</a>
+</li>
+</ul>
+<p>this site was built using <a href="http://middlemanapp.com">middleman</a> and
+<a href="http://twitter.github.io/bootstrap/">bootstrap</a></p>
+</div>
+</div>
+
+</footer>
+<script src="/vroom/assets/js/jquery.js" type="text/javascript"></script>
+<script src="/vroom/assets/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<script>
+  function next_example() {
+    current = $('#examples .active');
+    next = current.next('.example');
+    if (!next.length) {
+      next = $('#examples .example').first();
+    }
+    next.addClass('active').fadeToggle();
+    current.toggle().removeClass('active');
+  }
+  
+  $('document').ready(function() {
+    setInterval(next_example, 10000);
+  }); 
+  
+  $('#brief p').addClass('lead');
+</script>
+
+</body>
+</html>
+
